@@ -91,16 +91,9 @@ async def find_listing_info(query):
     df = pd.DataFrame({'Query':queries, 'Views per day':views})
     def make_clickable(title):
         return '<a target="_blank" href="{}">{}</a>'.format(all_title_views[title], title)
-    def get_hours(title):
-        return all_title_views2[title]
-    #df['Hours'] = df['Query'].apply(get_hours)
+
 
     df['Query'] = df['Query'].apply(make_clickable)
 
 
     return df, top_10_hash
-
-    # return "\n".join([
-    #     f"{num + 1}. <i><a href='{all_title_views[user[0]]}'>{user[0]}</a></i>:  <b>{user[1]:,}</b> просмотров в час за последние {all_title_views2[user[0]]} ч.\n"
-    #     for num, user in enumerate(top_10)
-    # ]), top_10_hash

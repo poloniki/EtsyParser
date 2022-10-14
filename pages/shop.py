@@ -1,16 +1,15 @@
 import streamlit as st
-import aiohttp
 import asyncio
 
 
 from EtsyParser.shop_analytics import basic_shop_info,get_shop_id,stat_of_shop_listings
+# st.set_page_config(page_title="Analyze shop", page_icon="🤖")
 
 
 shop = st.text_input('Shop name',value="DoodleLettersStore")
 
 if "load_state" not in st.session_state:
      st.session_state.load_state = False
-
 
 
 async def main():
@@ -29,10 +28,6 @@ async def main():
 
 
 # make each button press toggle that entry in the session state.
-
-
-
-
 
 
 if __name__ == '__main__':

@@ -7,15 +7,15 @@ today = datetime.now()
 
 async def get_trending(list_of_hashtags):
     uri = 'listings/active'
+    hash_dict = {}
     try:
-        hash_dict = {}
+
         for each in list_of_hashtags:
 
             response = await getv2(uri, {'keywords': each, 'limit': 100, 'sort_on': 'created', 'sort_order': 'down'})
             # count = response['count']
             recent_count = 1
             one_day_views = 0
-
             for every in response['results']:
 
                 creation_date = datetime.utcfromtimestamp(int(every['creation_tsz']))
