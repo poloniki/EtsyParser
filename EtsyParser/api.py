@@ -1,8 +1,11 @@
 import logging
 import os
 import aiohttp
+import streamlit as st
+
 api = os.environ.get("ETSYAPI")
-base_url = "https://openapi.etsy.com/v3/application/"
+api = st.secrets["ETSYAPI"] #"https://openapi.etsy.com/v3/application/"
+
 
 
 async def get(uri, arguments=None):
