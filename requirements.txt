@@ -7,7 +7,7 @@ wheel>=0.29
 # data science
 numpy
 pandas
-scikit-learn
+requests
 
 # tests/linter
 black
@@ -16,11 +16,6 @@ flake8
 pytest
 yapf
 
-# API
-gcsfs
-google-cloud-storage
-mlflow
-s3fs
 
 # utilities
 six>=1.14
@@ -31,3 +26,4 @@ termcolor
 #frontend
 streamlit
 aiohttp
+gunicorn
