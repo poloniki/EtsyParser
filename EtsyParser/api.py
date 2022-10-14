@@ -7,6 +7,7 @@ api = os.environ.get("ETSYAPI")
 api = st.secrets["ETSYAPI"] #"https://openapi.etsy.com/v3/application/"
 
 
+base_url = "https://openapi.etsy.com/v3/application/"
 
 async def get(uri, arguments=None):
     url = f'{base_url}{uri}'
